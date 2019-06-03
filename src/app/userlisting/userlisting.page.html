@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar color="light">
+      <div class="elem" slot="start">
+        <ion-button color="#ffffff">
+          <ion-icon slot="icon-only" name="search" color="danger"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-title>
+        <img
+          alt="logo"
+          style="height:25px; background: no-repeat left center"
+          src="assets/icon/vistfoundation.png"
+        />
+        EASY-LOANEY
+      </ion-title>
+      <div class="elem" slot="end">
+        <ion-button color="#ffffff" (click)="chatUser()">
+          <ion-icon slot="icon-only" name="chatbubbles" color="danger"></ion-icon>
+          <ion-badge color="dark">50</ion-badge>
+        </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  
+  <!-- app content -->
+  <ion-content>
+    <ion-list no-lines>
+      <ion-list>
+        <ion-item-sliding *ngFor="let key of items">
+          <ion-item>
+            <ion-card>
+                <img src="{{ key.Item_PhotoURL }}" />
+                <ion-card-header>
+                  <ion-card-title>{{ key.Item_Title }}</ion-card-title>
+                  <ion-card-subtitle>{{ key.Item_ListedTime }}</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    {{ key.Item_Description }}
+                </ion-card-content>
+              </ion-card>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-list>
+  </ion-content>
+  
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="danger"
+      ><ion-ripple-effect></ion-ripple-effect>
+      <ion-icon name="ios-camera" color="light"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-tabs color="light">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="newfeed" (click)="newFeed()"
+        ><ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="ios-pricetags"></ion-icon>
+        <ion-label>Marketplace</ion-label>
+        <!-- <ion-badge color="danger">6</ion-badge> -->
+      </ion-tab-button>
+  
+      <ion-tab-button tab="mylist" (click)="userListing()"
+        ><ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="ios-clipboard"></ion-icon>
+        <ion-label>Listings</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button> </ion-tab-button>
+  
+      <ion-tab-button tab="myrented" (click)="userRented()"
+        ><ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="list"></ion-icon>
+        <ion-label>Rented</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="profile" (click)="userProfile()"
+        ><ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  

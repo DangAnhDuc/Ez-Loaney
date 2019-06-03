@@ -1,0 +1,32 @@
+<ion-toolbar >
+    <ion-buttons slot="secondary">
+      <ion-button (click)="backChats()">
+        <ion-icon slot="icon-only" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Search User" animated="true" show-cancel-button="true"
+    color="light" [(ngModel)]="searchstring" (input)="searchuser($event)"></ion-searchbar>
+  </ion-toolbar>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-list>
+      <ion-item-sliding *ngFor="let key of filteredusers">
+        <ion-item > 
+          <ion-avatar item-left>
+            <img src="{{ key.User_PhotoURL }}" />
+          </ion-avatar>
+          <ion-text color="primary">
+            <h2>{{ key.User_Name }}</h2>
+          </ion-text>
+        </ion-item>
+        <ion-item-options slide="left">
+          <ion-button color="primary" (click)="sendreq(key)">
+            <ion-icon name="person-add"></ion-icon>
+            Chat
+          </ion-button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-list>
+</ion-content>

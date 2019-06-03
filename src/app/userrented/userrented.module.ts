@@ -5,14 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { NewfeedPage } from './newfeed.page';
+import { UserrentedPage } from './userrented.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: NewfeedPage
-  },
-
+    component: UserrentedPage
+  }
 ];
 
 @NgModule({
@@ -22,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NewfeedPage]
+  declarations: [UserrentedPage]
 })
-export class NewfeedPageModule {}
+export class UserrentedPageModule {}

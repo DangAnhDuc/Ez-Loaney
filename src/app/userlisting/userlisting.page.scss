@@ -1,0 +1,23 @@
+ion-searchbar {
+    text-align: left !important;
+}
+
+.elem{
+    position: relative;
+}
+ion-button {
+    color: white;
+}
+ion-icon{
+    color: #666;
+}
+
+
+div#toolbar div.elem:first-child {
+    flex-grow: 1;
+}
+div#toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}

@@ -1,0 +1,58 @@
+<ion-toolbar color="primary">
+  <div id="toolbar">
+    <div class="elem">
+      <ion-button color="#ffffff" (click)="backHome()">
+        <ion-icon
+          slot="icon-only"
+          name="arrow-round-back"
+          color="light"
+        ></ion-icon>
+      </ion-button>
+    </div>
+    <div class="title">
+      <ion-title>Chats</ion-title>
+    </div>
+    <div class="elem">
+      <ion-button color="#ffffff" (click)="addUser()">
+        <ion-icon slot="icon-only" name="search" color="light"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-toolbar>
+
+
+<ion-content padding>
+    <ion-list no-lines>
+      <ion-list-header>
+        Requests
+      </ion-list-header>
+      <ion-item-sliding *ngFor="let item of myrequests">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="{{ item.User_PhotoURL }}" />
+          </ion-avatar>
+          <h4>{{ item.User_Name }}</h4>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="secondary" (click)="accept(item)">
+            <ion-icon name="checkmark"></ion-icon>
+            ACCEPT
+          </button>
+          <button ion-button color="danger" (click)="ignore(item)">
+            <ion-icon name="trash"></ion-icon>
+            REJECT
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-list-header>
+        Contacts
+      </ion-list-header>
+      <ion-item *ngFor="let item of myfriends" (click)="contactchat(item)">
+        <ion-avatar item-left>
+          <img src="{{ item.User_PhotoURL }}" />
+        </ion-avatar>
+        <h3>{{ item.User_Name }}</h3>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

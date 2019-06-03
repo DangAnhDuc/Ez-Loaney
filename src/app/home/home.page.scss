@@ -1,22 +1,20 @@
-ion-content{
-    --background: url("../../assets/login_background.jpg") no-repeat 100% 100%;
-    -webkit-background-image: url("../../assets/login_background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    text-align: center;
-    overflow: hidden;
+ion-content {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  text-align: center;
+  overflow: hidden;
 }
 
-img{
-    margin-top: 50px;
-    width: 330px;
-    height: 250px;
+img {
+  margin-top: 50px;
+  width: 330px;
+  height: 250px;
 }
 
-.facebook{
-    margin-top: 280px;
+.facebook {
+  margin-top: 280px;
 }
-.google{
-    margin-top: 20px;
+.google {
+  margin-top: 20px;
 }

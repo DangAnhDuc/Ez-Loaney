@@ -1,0 +1,41 @@
+ion-searchbar {
+    text-align: left !important;
+}
+
+.elem{
+    position: relative;
+}
+ion-button {
+    color: white;
+}
+ion-icon{
+    color: #666;
+}
+
+
+div#toolbar div.elem:first-child {
+    flex-grow: 1;
+}
+div#toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+.user-photo ion-avatar {
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+  }
+
+  ion-list {
+    margin-top: 24px;
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      padding-bottom: 4px;
+    };
+    h2 {
+      font-weight: 400;
+      opacity: .5;
+    }
+  }
